@@ -1,0 +1,91 @@
+<!-- Update the header section only -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarshly - Academic Success Toolkit</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to right, #2563eb, #3b82f6);
+        }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: #2563eb;
+            padding: 1rem;
+            z-index: 50;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="gradient-bg text-white py-4">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                </svg>
+                <span class="text-xl font-semibold">Scholarshly</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="cv-generator.html" class="hover:text-blue-200">CV Generator</a>
+                <a href="sop-generator.html" class="hover:text-blue-200">SOP Generator</a>
+                <a href="scholarship-essay.html" class="hover:text-blue-200">Scholarship Essay</a>
+                <a href="https://aff.stakecut.com/215256/398444" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-50 transition-colors font-medium">
+                    Travel By Self
+                </a>
+            </nav>
+            <button class="md:hidden" id="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden" id="mobile-menu">
+            <nav class="flex flex-col space-y-4">
+                <a href="cv-generator.html" class="text-white hover:text-blue-200">CV Generator</a>
+                <a href="sop-generator.html" class="text-white hover:text-blue-200">SOP Generator</a>
+                <a href="scholarship-essay.html" class="text-white hover:text-blue-200">Scholarship Essay</a>
+                <a href="https://aff.stakecut.com/215256/398444" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="bg-white text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50 transition-colors text-center font-medium">
+                    Travel By Self
+                </a>
+            </nav>
+        </div>
+    </header>
+
+
+<!-- Also update the mobile menu script to include the new link -->
+<script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.querySelector('button.md\\:hidden');
+    const nav = document.querySelector('nav');
+    
+    mobileMenuButton.addEventListener('click', () => {
+        nav.classList.toggle('hidden');
+        nav.classList.toggle('flex');
+        nav.classList.toggle('flex-col');
+        nav.classList.toggle('absolute');
+        nav.classList.toggle('top-16');
+        nav.classList.toggle('left-0');
+        nav.classList.toggle('right-0');
+        nav.classList.toggle('bg-blue-600');
+        nav.classList.toggle('p-4');
+        nav.classList.toggle('z-50');
+    });
+</script>
+
